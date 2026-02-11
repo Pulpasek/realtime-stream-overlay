@@ -57,7 +57,7 @@ export default function Home() {
     }
   }, [])
 
-  const elapsed = state.globalTimer ? now - state.globalTimer : 0
+  const elapsed = state.globalTimer ? (state.globalElapsedTime || 0) + (now - state.globalTimer) : state.globalElapsedTime || 0
 
   return (
     <div className='min-h-screen min-w-screen p-6 bg-transparent'>

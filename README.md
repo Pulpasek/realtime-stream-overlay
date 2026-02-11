@@ -13,6 +13,7 @@ All commands are sent as query parameters to `/api/state`. Multiple commands can
 | Command            | Usage Example                     | Description                            |
 | ------------------ | --------------------------------- | -------------------------------------- |
 | globalTimerStart   | `/api/state?globalTimerStart`     | Start the global timer                 |
+| globalTimerPause   | `/api/state?globalTimerPause`     | Pause the global timer                 |
 | globalTimerRestart | `/api/state?globalTimerRestart`   | Restart the global timer from zero     |
 | globalTimerStop    | `/api/state?globalTimerStop`      | Stop and clear the global timer        |
 | setGlobalTimer     | `/api/state?setGlobalTimer=1234`  | Set timer to specific timestamp (ms)   |
