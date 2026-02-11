@@ -24,7 +24,7 @@ export default function RootLayout({
       <head>
         <title>Realtime Stream Overlay</title>
       </head>
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased bg-transparent`}>{children}</body>
     </html>
   )
 }
