@@ -21,13 +21,21 @@ const paramHandlers: ParamHandler[] = [
   {
     key: 'globalTimerRestart',
     update: ({ state, now }) => {
-      return { ...state, globalTimer: now }
+      return { ...state, globalElapsedTime: null, globalTimer: now }
     },
   },
   {
     key: 'globalTimerStop',
     update: ({ state }) => {
-      return { ...state, globalTimer: null }
+      return { ...state, globalElapsedTime: null, globalTimer: null }
+    },
+  },
+  {
+    key: 'globalTimerPause',
+    update: ({ state, now }) => {
+      if (!state.globalTimer) return state
+      const gElapsedTimeMath = Math.max((state.globalElapsedTime || 0) + (now - state.globalTimer))
+      return { ...state, globalElapsedTime: gElapsedTimeMath, globalTimer: null }
     },
   },
   {

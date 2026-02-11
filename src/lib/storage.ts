@@ -8,6 +8,7 @@ const STATE_FILE = join(DATA_DIR, 'state.json')
 
 export const defaultState: State = {
   globalTimer: null,
+  globalElapsedTime: null,
   globalDeaths: 0,
   bossTimer: null,
   bossName: undefined,

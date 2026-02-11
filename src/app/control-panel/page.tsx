@@ -109,6 +109,12 @@ export default function ControlPanel() {
               Start Timer
             </Button>
             <Button
+              onPress={() => sendCommand('globalTimerPause')}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Pause Timer
+            </Button>
+            <Button
               onPress={() => sendCommand('globalTimerRestart')}
               className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
             >
