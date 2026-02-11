@@ -2,6 +2,10 @@
 
 Realtime overlays for multiple streaming platforms with chat commands and persistent state storage.
 
+## Control Panel
+
+Easily manage timers and death via the control panel at `/control-panel`
+
 ## Commands
 
 All commands are sent as query parameters to `/api/state`. Multiple commands can be chained in a single request.
