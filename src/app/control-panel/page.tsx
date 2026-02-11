@@ -229,6 +229,18 @@ export default function ControlPanel() {
           </div>
           <div className='flex gap-2 mt-2'>
             <Button
+              onPress={() => sendCommand('bossTimerPause')}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Pause Boss Timer
+            </Button>
+            <Button
+              onPress={() => sendCommand('bossTimerResume')}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Resume Boss Timer
+            </Button>
+            <Button
               onPress={() => sendCommand('bossRestart')}
               className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
             >
