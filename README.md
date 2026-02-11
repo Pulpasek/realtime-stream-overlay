@@ -1,1 +1,3 @@
-A Next.js v16 blank template
+## Realtime Stream Overlay
+
+Realtime overlays for multiple streaming platforms with chat commands 

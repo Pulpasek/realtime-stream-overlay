@@ -3,7 +3,7 @@ const config = {
   tabWidth: 2,
   useTabs: false,
   semi: false,
-  printWidth: 120,
+  printWidth: 100,
   singleQuote: true,
   jsxSingleQuote: true,
   trailingComma: 'all',
