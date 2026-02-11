@@ -18,6 +18,7 @@ export default function ControlPanel() {
   const [state, setState] = useState<State | null>(null)
   const [now, setNow] = useState(() => Date.now())
   const [bossNameInput, setBossNameInput] = useState('')
+  const [bossEditNameInput, setBossEditNameInput] = useState('')
   const [globalDeathsInput, setGlobalDeathsInput] = useState('')
   const [bossDeathsInput, setBossDeathsInput] = useState('')
 
@@ -200,6 +201,30 @@ export default function ControlPanel() {
               className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
             >
               Start Boss
+            </Button>
+          </div>
+          
+          <div className='flex gap-2 mt-2'>
+            <Input
+              value={bossEditNameInput}
+              onChange={e => setBossEditNameInput(e.target.value)}
+              placeholder='Edit boss name'
+              radius='sm'
+              classNames={{
+                base: 'flex-1 max-w-[350px]',
+                inputWrapper:
+                  'bg-neutral-800 border-neutral-600 data-[hover=true]:!bg-neutral-700 group-data-[focus-within=true]:!bg-neutral-700',
+                input: '!text-white placeholder:text-neutral-400',
+              }}
+            />
+            <Button
+              onPress={() => {
+                sendCommand('setBossName', bossEditNameInput)
+                setBossEditNameInput('')
+              }}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Edit Name
             </Button>
           </div>
           <div className='flex gap-2 mt-2'>

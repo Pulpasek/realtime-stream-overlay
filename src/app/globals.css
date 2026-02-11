@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: #1e1e1e;
   color: var(--foreground);
   font-family: var(--font-inter);
 }
