@@ -1,7 +1,9 @@
 export interface State {
-  timerStart: number | null
-  timerTwoStart?: number | null
+  globalTimer: number | null
+  globalDeaths?: number
+  bossTimer?: number | null
   bossName?: string
+  bossDeaths?: number
 }
 
 export interface UpdateContext {

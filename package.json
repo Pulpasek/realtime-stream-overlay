@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pub": "concurrently \"next dev --turbopack\" \"ngrok http 3000 --log=stdout\""
+    "pub": "concurrently \"next dev --turbopack\" \"ngrok http 3000 --log=stdout\"",
+    "main": "git checkout main && git pull && git fetch -p"
   },
   "dependencies": {
     "@heroui/react": "^2.8.5",

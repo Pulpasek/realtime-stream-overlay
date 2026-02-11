@@ -31,11 +31,11 @@ Must be one of the following:
 ### Scope
 Common scopes for this project include:
 
-| Scope    | Description                                                                                  |
-| -------- | -------------------------------------------------------------------------------------------- |
-| **api**  | Changes to Tauri's backend with reference to files changed (e.g.: tauri-utils, tauri-idling) |
-| **ui**   | Changes to Tauri's backend with reference to files changed (e.g.: tauri-utils, tauri-idling) |
-| **deps** | Changes to Tauri's backend with reference to files changed (e.g.: tauri-utils, tauri-idling) |
+| Scope    | Description                     |
+| -------- | ------------------------------- |
+| **api**  | Changes to the api routes       |
+| **ui**   | Changes to frontend components  |
+| **deps** | Changes to project dependencies |
 
 
 ### Examples
