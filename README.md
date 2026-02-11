@@ -1,0 +1,1 @@
+A Next.js v16 blank template
