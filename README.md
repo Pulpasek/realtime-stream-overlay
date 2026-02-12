@@ -26,6 +26,8 @@ All commands are sent as query parameters to `/api/state`. Multiple commands can
 | resetGlobalDeaths  | `/api/state?resetGlobalDeaths`    | Reset global deaths to 0               |
 | --------------     | -------------------------------   | -------------------------------------- |
 | bossStart          | `/api/state?bossStart=Malenia`    | Start tracking a boss with given name  |
+| bossTimerPause     | `/api/state?bossTimerResume`      | Pauses boss timer                      |
+| bossTimerResume    | `/api/state?bossTimerPause`       | Resumes boss timer                     |
 | bossRestart        | `/api/state?bossRestart`          | Restart boss timer (keeps name/deaths) |
 | bossStop           | `/api/state?bossStop`             | Stop tracking current boss             |
 | setBossName        | `/api/state?setBossName=Radahn`   | Update the current boss name           |

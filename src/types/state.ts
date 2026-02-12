@@ -1,6 +1,7 @@
 export interface State {
   globalTimer: number | null
   globalElapsedTime?: number | null
+  bossElapsedTime?: number | null
   globalDeaths?: number
   bossTimer?: number | null
   bossName?: string

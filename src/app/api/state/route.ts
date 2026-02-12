@@ -102,14 +102,14 @@ const paramHandlers: ParamHandler[] = [
   {
     key: 'bossStop',
     update: ({ state }) => {
-      return { ...state, bossTimer: null, bossName: undefined, bossDeaths: 0 }
+      return { ...state, bossElapsedTime: null, bossTimer: null, bossName: undefined, bossDeaths: 0 }
     },
   },
   {
     key: 'bossRestart',
     update: ({ state, now }) => {
       if (!state.bossName) return state
-      return { ...state, bossTimer: now }
+      return { ...state, bossElapsedTime: null, bossTimer: now }
     },
   },
   {
@@ -133,6 +133,20 @@ const paramHandlers: ParamHandler[] = [
       if (!state.bossName) return state
       if (!value) return state
       return { ...state, bossDeaths: Math.max(0, Number(value)) }
+    },
+  },
+  {
+    key: 'bossTimerPause',
+    update: ({ state, now }) => {
+      if (!state.bossTimer) return state
+      const bElapsedTimeMath = Math.max((state.bossElapsedTime || 0) + (now - state.bossTimer))
+      return { ...state, bossElapsedTime: bElapsedTimeMath, bossTimer: null }
+    },
+  },
+  {
+    key: 'bossTimerResume',
+    update: ({ state, now }) => {
+      return { ...state, bossTimer: now }
     },
   },
   {
