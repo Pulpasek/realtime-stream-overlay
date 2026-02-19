@@ -14,6 +14,9 @@ export const defaultState: State = {
   bossTimer: null,
   bossName: undefined,
   bossDeaths: 0,
+  overlayShow: false,
+  globalDeathsShow: false,
+  globalTimerShow: false,
 }
 
 async function ensureDataDir() {

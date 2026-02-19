@@ -13,6 +13,33 @@ async function ensureStateLoaded() {
 
 const paramHandlers: ParamHandler[] = [
   {
+    key: 'overlayShow',
+    update: ({ state }, value) => {
+      if (value == null) return state
+      const visible = String(value).toLowerCase()
+      if (visible === 'false') return { ...state, overlayShow: false}
+      return { ...state, overlayShow: true }
+    },
+  },
+  {
+    key: 'globalDeathsShow',
+    update: ({ state }, value) => {
+      if (value == null) return state
+      const visible = String(value).toLowerCase()
+      if (visible === 'false') return { ...state, globalDeathsShow: false}
+      return { ...state, globalDeathsShow: true }
+    },
+  },
+{
+    key: 'globalTimerShow',
+    update: ({ state }, value) => {
+      if (value == null) return state
+      const visible = String(value).toLowerCase()
+      if (visible === 'false') return { ...state, globalTimerShow: false}
+      return { ...state, globalTimerShow: true }
+    },
+  },
+  {
     key: 'globalTimerStart',
     update: ({ state, now }) => {
       return { ...state, globalTimer: now }

@@ -83,6 +83,18 @@ export default function ControlPanel() {
 
           <div className='flex gap-2'>
             <Button
+              onPress={() => sendCommand('overlayShow=false')}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Hide Overlay
+            </Button>
+            <Button
+              onPress={() => sendCommand('overlayShow=true')}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Show Overlay
+            </Button>                            
+            <Button
               onPress={() => refreshState()}
               className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
             >
@@ -122,6 +134,18 @@ export default function ControlPanel() {
               Restart Timer
             </Button>
             <Button
+              onPress={() => sendCommand('globalTimerShow=false')}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Hide Timer
+            </Button>
+            <Button
+              onPress={() => sendCommand('globalTimerShow=true')}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Show Timer
+            </Button>                           
+            <Button
               color='danger'
               onPress={() => sendCommand('globalTimerStop')}
               className='text-white px-4 py-2 rounded'
@@ -143,6 +167,18 @@ export default function ControlPanel() {
             >
               Remove Death (-1)
             </Button>
+            <Button
+              onPress={() => sendCommand('globalDeathsShow=false')}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Hide Deaths
+            </Button> 
+            <Button
+              onPress={() => sendCommand('globalDeathsShow=true')}
+              className='bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded'
+            >
+              Show Deahts
+            </Button> 
             <Button
               color='danger'
               onPress={() => sendCommand('resetGlobalDeaths')}
