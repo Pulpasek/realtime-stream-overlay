@@ -6,6 +6,9 @@ export interface State {
   bossTimer?: number | null
   bossName?: string
   bossDeaths?: number
+  overlayShow: boolean,
+  globalDeathsShow: boolean,
+  globalTimerShow: boolean
 }
 
 export interface UpdateContext {

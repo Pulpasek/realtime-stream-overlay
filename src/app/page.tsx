@@ -10,6 +10,9 @@ export const defaultState: State = {
   bossTimer: null,
   bossName: undefined,
   bossDeaths: 0,
+  overlayShow: false,
+  globalDeathsShow: false,
+  globalTimerShow: false,
 }
 
 function formatDuration(ms: number) {
@@ -60,21 +63,29 @@ export default function Home() {
   const elapsed = state.globalTimer ? (state.globalElapsedTime || 0) + (now - state.globalTimer) : state.globalElapsedTime || 0
   const bElapsed = state.bossTimer ? (state.bossElapsedTime || 0) + (now - state.bossTimer) : state.bossElapsedTime || 0
 
+  const hasOverlayContent = !!(
+    state.globalDeathsShow || state.globalTimerShow || state.bossName
+  )
+
+  if (!state.overlayShow || !hasOverlayContent) return null
+
   return (
     <div className='min-h-screen min-w-screen p-6 bg-transparent'>
       <div className='bg-black/95 border border-white/20 rounded-xl text-white p-4 w-fit'>
         {/* Global Deaths */}
-        <div className='flex gap-4 text-4xl'>
-          <p className='font-semibold'>Deaths:</p>
-          <p>{state.globalDeaths || 0}</p>
-        </div>
-
+        {state.globalDeathsShow && (
+          <div className='flex gap-4 text-4xl'>
+            <p className='font-semibold'>Deaths:</p>
+            <p>{state.globalDeaths || 0}</p>
+          </div>
+        )}
         {/* Global Timer */}
-        <div className='flex gap-4 text-4xl'>
-          <p className='font-semibold'>Timer:</p>
-          <p className='tabular-nums'>{formatDuration(elapsed)}</p>
-        </div>
-
+        {state.globalTimerShow && (
+          <div className='flex gap-4 text-4xl'>
+            <p className='font-semibold'>Timer:</p>
+            <p className='tabular-nums'>{formatDuration(elapsed)}</p>
+          </div>
+        )}
         {/* Boss Specific */}
         {state.bossName && (
           <div className='text-blue-400'>
